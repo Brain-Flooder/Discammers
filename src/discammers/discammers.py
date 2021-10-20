@@ -31,7 +31,7 @@ def isSuccess(r):
     if r['status']=='failed':
         raise NotFound(r['message'])
 
-def checkID(id:int):
+def checkID(id:str):
     r = requests.get(f'https://discordscammers.com/api/v1/search/{id}', verify = False,timeout=2)
     code = r.status_code
     back = r.json
